@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-
+interface List{
+  name: string,
+  description: string,
+  specs: string,
+  stock: number,
+  price: number
+}
 @Component({
   selector: 'app-product-list',
   imports: [],
@@ -7,14 +13,14 @@ import { Component } from '@angular/core';
   styleUrl: './product-list.scss',
 })
 export class ProductList {
-  list = [
+  list: List[] = [
     {
       name: 'Gaming Maus',
       description:
         'Eine ergonomische Gaming-Maus mit hoher Präzision und einstellbarer DPI. Ideal für FPS- und MOBA-Spiele, bietet sie eine langlebige Bauweise und komfortable Seitentasten für schnelles Reagieren.',
       specs: 'dpi: 6400, cable length: 1.8m, color: Schwarz',
       stock: 120,
-      price: 2500000,
+      price: 250000,
     },
     {
       name: 'Mechanische Gaming Tastatur',
@@ -22,7 +28,7 @@ export class ProductList {
         'Eine reaktions schnelle Tastatur mit RGB-Beleuchtung und mechanischen Switches für ein optimales Tipp- und Gaming-Gefühl.',
       specs: 'switches: Red, layout: DE, backlighting: RGB',
       stock: 85,
-      price: 3499000,
+      price: 34990,
     },
     {
       name: 'Wireless Gaming Headset',
@@ -30,7 +36,7 @@ export class ProductList {
         'Kabelloses Over-Ear-Headset mit sattem Surround-Sound, integriertem Mikrofon und hoher Akkulaufzeit für lange Sessions.',
       specs: 'driver: 50mm, battery: 30h, connection: 2.4GHz Wireless',
       stock: 45,
-      price: 4999000,
+      price: 49.99,
     },
     {
       name: 'Ergonomisches Mauspad XL',
@@ -38,7 +44,7 @@ export class ProductList {
         'Extragroße und rutschfeste Unterlage für flüssige Mausbewegungen und stabilen Halt der Tastatur.',
       specs: 'dimensions: 900x400mm, thickness: 3mm, surface: Speed',
       stock: 210,
-      price: 990000,
+      price: 99.01,
     },
     {
       name: 'Streaming USB Mikrofon',
@@ -46,7 +52,7 @@ export class ProductList {
         'Kondensatormikrofon mit Studioqualität für Podcasts, Streams und klare Sprachübertragung im Team-Chat.',
       specs: 'polar pattern: Cardioid, connection: USB-C, sample rate: 96kHz',
       stock: 30,
-      price: 3999000,
+      price: 39.99,
     },
     {
       name: 'In-Ear Gaming Kopfhörer',
@@ -54,7 +60,7 @@ export class ProductList {
         'Kompakte In-Ear-Monitore mit starkem Bass und abnehmbarem Mikrofonarm für unterwegs.',
       specs: 'driver: 10mm, connector: 3.5mm Jack, weight: 20g',
       stock: 95,
-      price: 1500000,
+      price: 15.00,
     },
     {
       name: 'Vertikale Office Maus',
@@ -62,7 +68,7 @@ export class ProductList {
         'Ergonomische Maus zur Entlastung des Handgelenks bei langen Arbeitstagen und gelegentlichen Casual Games.',
       specs: 'dpi: 1600, sensor: Optical, connectivity: Bluetooth',
       stock: 60,
-      price: 1800000,
+      price: 18.00,
     },
     {
       name: 'RGB Maus-Bungee',
@@ -70,7 +76,7 @@ export class ProductList {
         'Hält das Mauskabel auf Spannung für ein kabelloses Gefühl mit integrierter Akzentbeleuchtung.',
       specs: 'ports: 2x USB 2.0, power: USB-powered, color: Mattschwarz',
       stock: 150,
-      price: 1299000,
+      price: 129.90,
     },
     {
       name: 'Gaming Controller Wireless',
@@ -78,7 +84,7 @@ export class ProductList {
         'Vielseitiger Gamepad-Controller mit präzisen Analog-Sticks und programmierbaren Rücktasten.',
       specs: 'compatibility: PC/Console, battery: 15h, rumble: Dual-Motor',
       stock: 75,
-      price: 2999000,
+      price: 29.99,
     },
     {
       name: 'Monitor Lichtleiste',
@@ -86,7 +92,8 @@ export class ProductList {
         'Bildschirm-Lampe zur augenschonenden Schreibtischbeleuchtung ohne störende Reflexionen auf dem Display.',
       specs: 'control: Touch/Remote, temperature: 2700K-6500K, power: USB',
       stock: 110,
-      price: 2199000,
+      price: 21.99,
     },
   ];
 }
+

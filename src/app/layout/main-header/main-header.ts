@@ -18,4 +18,9 @@ export class MainHeader {
       this.btn_txt = 'zurück zur Liste';
     }
   }
+  
+// todo delet only for testing
+  switchPath(){
+    this.path = this.path === '' ? 'detail' : ''
+  }
 }
