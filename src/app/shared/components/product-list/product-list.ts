@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 interface List{
   name: string,
   description: string,
@@ -8,11 +9,12 @@ interface List{
 }
 @Component({
   selector: 'app-product-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss',
 })
 export class ProductList {
+  
   list: List[] = [
     {
       name: 'Gaming Maus',

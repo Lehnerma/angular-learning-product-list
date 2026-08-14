@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './product-detail.scss',
 })
 export class ProductDetail {
+  private route = inject(ActivatedRoute);
+
+  // constructor() {
+  //   this.detailName = this.route.snapshot.paramMap.get('detailName');
+  // }
+
+  ngOnInit(){
+    let currentName = this.route.snapshot.paramMap.get('name');
+    if (currentName) this.detail.name = currentName;
+  }
+
   detail = {
     name: 'Gaming Maus',
     description:
@@ -16,7 +28,7 @@ export class ProductDetail {
     price: 25000,
   };
 
-  deletDetail(){
+  deletDetail() {
     this.detail.name = '';
   }
 }
