@@ -10,10 +10,6 @@ import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 export class ProductDetail {
   private route = inject(ActivatedRoute);
 
-  // constructor() {
-  //   this.detailName = this.route.snapshot.paramMap.get('detailName');
-  // }
-
   ngOnInit(){
     let currentName = this.route.snapshot.paramMap.get('name');
     if (currentName) this.detail.name = currentName;
