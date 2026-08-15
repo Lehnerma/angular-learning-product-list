@@ -1,8 +1,22 @@
 import { Service } from '@angular/core';
 import { Product } from '../interfaces/product';
+import { CurrencyPipe } from '@angular/common';
 @Service()
 export class Products {
     productList: Product[] = [];
+
+    productDetail: Product = {
+      name: 'n/a',
+      description: 'n/a',
+      specs: 'n/a',
+      stock: 0,
+      price: 0
+    }
+
+    setProductDetailByName(name:string){
+      let tmpProduct = this.productList.find(product => product.name == name);
+      if(tmpProduct) this.productDetail = tmpProduct;
+    }
 
     constructor(){
 

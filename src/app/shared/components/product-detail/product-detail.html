@@ -3,7 +3,7 @@
     <h1>{{detail.name}}</h1>
     <div>
       <a class="btn--edit" aria-label="Details editieren"></a>
-      <button (click)="deletDetail()" class="btn--delete" aria-label="Details löschen"></button>
+      <button class="btn--delete" aria-label="Details löschen"></button>
     </div>
   </header>
   <section aria-labelledby="description">
@@ -26,7 +26,7 @@
       </dd>
       <dt>Preis pro Stück (€):</dt>
       <dd>
-        <data [value]="detail.price">{{detail.price}}</data>
+        <data [value]="detail.price">{{detail.price | currency : 'EUR' : 'symbol' : '1.2-2'}}</data>
       </dd>
     </dl>
   </section>
