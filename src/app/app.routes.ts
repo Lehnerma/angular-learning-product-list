@@ -9,6 +9,10 @@ export const routes: Routes = [
     component: ProductList,
   },
   {
+    path: 'detail/:name',
+    component: ProductDetail,
+  },
+  {
     path: '404-page-not-found',
     component: Page404,
   },

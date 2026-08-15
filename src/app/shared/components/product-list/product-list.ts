@@ -1,20 +1,21 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-interface List{
-  name: string,
-  description: string,
-  specs: string,
-  stock: number,
-  price: number
+interface List {
+  name: string;
+  description: string;
+  specs: string;
+  stock: number;
+  price: number;
 }
 @Component({
   selector: 'app-product-list',
-  imports: [RouterLink],
+  imports: [RouterLink, CurrencyPipe],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss',
 })
+
 export class ProductList {
-  
   list: List[] = [
     {
       name: 'Gaming Maus',
@@ -62,7 +63,7 @@ export class ProductList {
         'Kompakte In-Ear-Monitore mit starkem Bass und abnehmbarem Mikrofonarm für unterwegs.',
       specs: 'driver: 10mm, connector: 3.5mm Jack, weight: 20g',
       stock: 95,
-      price: 15.00,
+      price: 15.0,
     },
     {
       name: 'Vertikale Office Maus',
@@ -70,7 +71,7 @@ export class ProductList {
         'Ergonomische Maus zur Entlastung des Handgelenks bei langen Arbeitstagen und gelegentlichen Casual Games.',
       specs: 'dpi: 1600, sensor: Optical, connectivity: Bluetooth',
       stock: 60,
-      price: 18.00,
+      price: 18.0,
     },
     {
       name: 'RGB Maus-Bungee',
@@ -78,7 +79,7 @@ export class ProductList {
         'Hält das Mauskabel auf Spannung für ein kabelloses Gefühl mit integrierter Akzentbeleuchtung.',
       specs: 'ports: 2x USB 2.0, power: USB-powered, color: Mattschwarz',
       stock: 150,
-      price: 129.90,
+      price: 129.9,
     },
     {
       name: 'Gaming Controller Wireless',
@@ -98,4 +99,3 @@ export class ProductList {
     },
   ];
 }
-
