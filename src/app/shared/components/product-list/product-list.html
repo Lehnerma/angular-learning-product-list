@@ -24,10 +24,10 @@
                 {{ item.price / 100000 | currency: 'EUR' }} mio
               }
               @case (item.price >= 1000) {
-                {{ item.price / 1000 | currency: 'EUR' : 'symbol' : '1.2-2'}} k
+                {{ item.price / 1000 | currency: 'EUR '}} k
               }
               @default {
-                {{ item.price | currency: 'EUR' }}
+                {{ item.price | currency: 'EUR'}}
               }
             }
           </td>

@@ -10,7 +10,7 @@ interface List {
 }
 @Component({
   selector: 'app-product-list',
-  imports: [RouterLink, CurrencyPipe],
+  imports: [RouterLink, CurrencyPipe,],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss',
 })
