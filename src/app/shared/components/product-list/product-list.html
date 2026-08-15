@@ -24,7 +24,7 @@
                 {{ item.price / 100000 | currency: 'EUR' }} mio
               }
               @case (item.price >= 1000) {
-                {{ item.price / 1000 | currency: 'EUR '}} k
+                {{ item.price / 1000 | currency: 'EUR'}} k
               }
               @default {
                 {{ item.price | currency: 'EUR'}}
