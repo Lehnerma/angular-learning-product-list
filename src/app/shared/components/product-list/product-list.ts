@@ -11,6 +11,6 @@ import { Products } from '../../services/products';
 })
 export class ProductList {
   productService = inject(Products);
-
-  list = this.productService.productList;
+  
+  list = this.productService.productList();
 }
