@@ -101,9 +101,5 @@ export class Products {
   setProductDetailByName(name: string) {
     let tmpProduct = this.productList().find((product) => product.name == name);
     if (tmpProduct) this.productDetail.set(tmpProduct);
-
-    // setTimeout(() => {
-    //   this.productDetail.update((product) => ({ ...product, description: 'Hello world' }));
-    // }, 2000); //todo delete
   }
 }
