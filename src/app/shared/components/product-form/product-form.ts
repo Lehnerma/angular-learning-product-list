@@ -22,8 +22,9 @@ export class ProductForm {
     price: new FormControl(0.00, { validators: [Validators.required, Validators.min(0)] }),
   });
 
+  
+
   onSubmit() {
-    // TODO: Use output() with form value
     if (this.productForm.valid) {
       console.log(this.productForm.value);
 

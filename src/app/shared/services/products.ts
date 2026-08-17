@@ -103,6 +103,10 @@ export class Products {
     this.productList.update(list => [...list, product])
   }
 
+  changeProduct(product: Product){
+    
+  }
+
   setProductDetailByName(name: string) {
     let tmpProduct = this.productList().find((product) => product.name == name);
     if (tmpProduct) this.productDetail.set(tmpProduct);
