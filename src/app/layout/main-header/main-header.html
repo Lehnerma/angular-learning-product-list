@@ -1,6 +1,12 @@
 <header class="main-header">
   <h1 class="main-header__title">Produkte</h1>
-  <a class="btn" [class.btn--primary]="path == ''" [class.btn--secondary]="path == 'detail'" (click)="switchPath()">
+  <a
+    class="btn"
+    [class.btn--primary]="path == ''"
+    [class.btn--secondary]="path == 'detail'"
+    (click)="switchPath()"
+    routerLink="productform"
+  >
     @if (path === 'detail') {
       <svg
         xmlns="http://www.w3.org/2000/svg"

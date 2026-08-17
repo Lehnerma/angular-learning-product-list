@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'main-header',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './main-header.html',
   styleUrl: './main-header.scss',
 })
@@ -12,7 +13,7 @@ export class MainHeader {
   path = '';
 
   ngOnInit() {
-    this.path = 'detail';
+    this.path = '';
 
     if (this.path === 'detail') {
       this.btn_txt = 'zurück zur Liste';
