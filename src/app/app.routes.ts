@@ -14,9 +14,12 @@ export const routes: Routes = [
     component: ProductDetail,
   },
   {
-    path: "productform",
-    component: ProductForm
+    path: 'productform',
+    component: ProductForm,
   },
+  { path: 'detail/:product-name/productform',
+    component: ProductForm,
+   },
   {
     path: '404-page-not-found',
     component: Page404,

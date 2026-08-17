@@ -103,10 +103,11 @@ export class Products {
     this.productList.update(list => [...list, product])
   }
 
-  changeProduct(product: Product){
-    
-  }
-
+updateProduct(originalName: string, updatedProduct: Product) {
+  this.productList.update(list =>
+    list.map(product => product.name === originalName ? updatedProduct : product)
+  );
+}
   setProductDetailByName(name: string) {
     let tmpProduct = this.productList().find((product) => product.name == name);
     if (tmpProduct) this.productDetail.set(tmpProduct);
