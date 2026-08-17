@@ -3,6 +3,7 @@ import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angula
 import { ActivatedRoute, Router } from '@angular/router';
 import { Products } from '../../services/products';
 import { Product } from '../../interfaces/product';
+import { ProductModel } from '../../models/productmodel';
 
 @Component({
   selector: 'app-product-form',
@@ -22,11 +23,21 @@ export class ProductForm {
   }
 
   productForm = new FormGroup({
-    name: new FormControl('n/a', { validators: [Validators.required, Validators.minLength(3)] }),
-    description: new FormControl('n/a', { validators: [] }),
-    // specs: new FormControl('n/a'),
-    stock: new FormControl(0, { validators: [Validators.required, Validators.min(0)] }),
-    price: new FormControl(0.0, { validators: [Validators.required, Validators.min(0)] }),
+    name: new FormControl('n/a', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.minLength(3)],
+    }),
+
+    description: new FormControl('n/a', { nonNullable: true }),
+    stock: new FormControl(0, {
+      nonNullable: true,
+      validators: [Validators.required, Validators.min(0)],
+    }),
+    
+    price: new FormControl(0.0, {
+      nonNullable: true,
+      validators: [Validators.required, Validators.min(0)],
+    }),
   });
 
   getCurrentProduct() {
@@ -48,17 +59,9 @@ export class ProductForm {
 
   onSubmit() {
     if (this.productForm.valid) {
-      let product: Product = {
-        name: this.productForm.value.name ? this.productForm.value.name : 'n/a',
-        description: this.productForm.value.description
-          ? this.productForm.value.description
-          : 'n/a',
-        specs: 'n/a',
-        stock: this.productForm.value.stock ? this.productForm.value.stock : 0,
-        price: this.productForm.value.price ? this.productForm.value.price : 0,
-      };
 
-      // wir checken ob es das product schon gibt.
+      let product = new ProductModel(this.productForm.value);
+
       if (this.product) {
         this.productService.updateProduct(this.product.name, product);
       } else {

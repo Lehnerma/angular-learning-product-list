@@ -8,6 +8,7 @@ import { MainHeader } from './layout/main-header/main-header';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
+
 export class App {
-  protected readonly title = signal('product-list');
+  //protected readonly title = signal('product-list');
 }
