@@ -3,6 +3,7 @@ import { Product } from '../interfaces/product';
 import { CurrencyPipe } from '@angular/common';
 @Service()
 export class Products {
+  
   productList = signal<Product[]>([]);
 
   constructor() {
@@ -97,6 +98,10 @@ export class Products {
     stock: 0,
     price: 0,
   });
+
+  addProduct(product: Product){
+    this.productList.update(list => [...list, product])
+  }
 
   setProductDetailByName(name: string) {
     let tmpProduct = this.productList().find((product) => product.name == name);

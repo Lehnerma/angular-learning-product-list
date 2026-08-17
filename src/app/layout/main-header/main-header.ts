@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'main-header',
@@ -8,6 +8,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './main-header.scss',
 })
 export class MainHeader {
+  router = inject(Router);
   btn_txt = 'Neues Produkt';
   btnClassList = 'btn--primary';
   path = '';
@@ -19,9 +20,11 @@ export class MainHeader {
       this.btn_txt = 'zurück zur Liste';
     }
   }
-  
-// todo delet only for testing
-  switchPath(){
-    this.path = this.path === '' ? 'detail' : ''
+
+  // todo delet only for testing
+  switchPath() {
+    this.path = this.router.url;
+    console.log(this.path);
+    
   }
 }
