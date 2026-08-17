@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, RouterLink } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router, RouterLink } from '@angular/router';
 import { Products } from '../../services/products';
 import { CurrencyPipe } from '@angular/common';
 
@@ -12,17 +12,18 @@ import { CurrencyPipe } from '@angular/common';
 
 export class ProductDetail {
   private route = inject(ActivatedRoute);
+  router = inject(Router);
   productService = inject(Products);
-
-  detail = this.productService.productDetail;
-
+  detail = this.productService.productDetail; // unser detail als signal. 
 
   ngOnInit() {
-    let currentId = Number(this.route.snapshot.paramMap.get('id'));
+   const currentId = Number(this.route.snapshot.paramMap.get('id'));
     if (currentId) this.productService.setProductDetailById(currentId);
   }
 
-  deletDetail() {
-    this.detail.update(product => ({...product , description: ''}))
+  async deletDetail() {
+    this.productService.deleteProduct(this.detail().id)
+
+    this.router.navigate(['']);
   }
 }

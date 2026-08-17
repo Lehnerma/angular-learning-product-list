@@ -24,7 +24,5 @@ export class MainHeader {
   // todo delet only for testing
   switchPath() {
     this.path = this.router.url;
-    console.log(this.path);
-    
   }
 }

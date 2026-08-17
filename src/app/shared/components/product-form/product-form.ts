@@ -42,7 +42,6 @@ export class ProductForm {
 
   getCurrentProduct() {
     const currentId = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(currentId);
     this.product = this.productService.productList().find((product) => product.id === currentId);
   }
 
