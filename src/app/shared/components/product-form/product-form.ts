@@ -33,7 +33,7 @@ export class ProductForm {
       nonNullable: true,
       validators: [Validators.required, Validators.min(0)],
     }),
-    
+
     price: new FormControl(0.0, {
       nonNullable: true,
       validators: [Validators.required, Validators.min(0)],
@@ -41,10 +41,9 @@ export class ProductForm {
   });
 
   getCurrentProduct() {
-    const currentName = this.route.snapshot.paramMap.get('product-name');
-    this.product = this.productService
-      .productList()
-      .find((product) => product.name === currentName);
+    const currentId = Number(this.route.snapshot.paramMap.get('id'));
+    console.log(currentId);
+    this.product = this.productService.productList().find((product) => product.id === currentId);
   }
 
   insertForm() {
@@ -59,7 +58,6 @@ export class ProductForm {
 
   onSubmit() {
     if (this.productForm.valid) {
-
       let product = new ProductModel(this.productForm.value);
 
       if (this.product) {

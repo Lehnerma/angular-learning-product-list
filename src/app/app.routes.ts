@@ -10,14 +10,14 @@ export const routes: Routes = [
     component: ProductList,
   },
   {
-    path: 'detail/:name',
+    path: 'detail/:id',
     component: ProductDetail,
   },
   {
     path: 'productform',
     component: ProductForm,
   },
-  { path: 'detail/:product-name/productform',
+  { path: 'detail/:id/productform',
     component: ProductForm,
    },
   {

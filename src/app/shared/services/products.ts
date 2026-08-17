@@ -14,6 +14,11 @@ export class Products {
     if (tmpProduct) this.productDetail.set(tmpProduct);
   }
 
+    setProductDetailById(id: number) {
+    let tmpProduct = this.productList().find((product) => product.id == id);
+    if (tmpProduct) this.productDetail.set(tmpProduct);
+  }
+
   async getAllProduct() {
     let response = await this.supabase
       .from('products') //

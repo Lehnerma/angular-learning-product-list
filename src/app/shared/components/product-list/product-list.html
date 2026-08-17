@@ -11,8 +11,8 @@
     </thead>
 
     <tbody>
-      @for (item of list(); track item.name; let i = $index) {
-        <tr role="link" [routerLink]="['detail', item.name]">
+      @for (item of list(); track item.id; let i = $index) {
+        <tr role="link" [routerLink]="['detail', item.id]">
           <td>{{ item.name }}</td>
           <td>{{ item.description }}</td>
           <td>
@@ -24,10 +24,10 @@
                 {{ item.price / 100000 | currency: 'EUR' }} mio
               }
               @case (item.price >= 1000) {
-                {{ item.price / 1000 | currency: 'EUR'}} k
+                {{ item.price / 1000 | currency: 'EUR' }} k
               }
               @default {
-                {{ item.price | currency: 'EUR'}}
+                {{ item.price | currency: 'EUR' }}
               }
             }
           </td>
